@@ -1,12 +1,14 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, Content } from './styles';
 import logo from '../../assets/logo.svg';
 
 const Header = () => {
 	return (
 		<Container>
-			<img src={logo} alt='showing dt money logo' />
-			<button type='button'>New Transaction</button>
+			<Content>
+				<img src={logo} alt='showing dt money logo' />
+				<button type='button'>New Transaction</button>
+			</Content>
 		</Container>
 	);
 };
