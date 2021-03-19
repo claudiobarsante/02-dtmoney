@@ -1,13 +1,18 @@
-import React from 'react';
 import { Container, Content } from './styles';
 import logo from '../../assets/logo.svg';
 
-const Header = () => {
+interface IProps {
+	onOpenModal: () => void;
+}
+
+const Header = ({ onOpenModal }: IProps) => {
 	return (
 		<Container>
 			<Content>
 				<img src={logo} alt='showing dt money logo' />
-				<button type='button'>New Transaction</button>
+				<button type='button' onClick={onOpenModal}>
+					New Transaction
+				</button>
 			</Content>
 		</Container>
 	);

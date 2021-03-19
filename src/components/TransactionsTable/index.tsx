@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { api } from '../../services/api';
+//Styles
 import { Container } from './styles';
 
 const TransactionsTable = () => {
@@ -11,8 +12,8 @@ const TransactionsTable = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Description</th>
-						<th>Price</th>
+						<th>Title</th>
+						<th>Value</th>
 						<th>Category</th>
 						<th>Date</th>
 					</tr>
