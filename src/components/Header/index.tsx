@@ -1,5 +1,7 @@
-import { Container, Content } from './styles';
+//Images
 import logo from '../../assets/logo.svg';
+//Styles
+import { Container, Content } from './styles';
 
 interface IProps {
 	onOpenModal: () => void;

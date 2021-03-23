@@ -2,6 +2,7 @@ import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
 import { useTransactions } from '../../context/TransactionsContext';
+import { TransactionType } from '../../types/transactions';
 import { Container } from './styles';
 
 const Summary = () => {
@@ -9,7 +10,7 @@ const Summary = () => {
 
 	const summary = transactions.reduce(
 		(acc, transaction) => {
-			if (transaction.type === 'income') {
+			if (transaction.type === TransactionType.Income) {
 				acc.income += transaction.amount;
 				acc.total += transaction.amount;
 			} else {

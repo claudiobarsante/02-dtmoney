@@ -1,7 +1,12 @@
+export enum TransactionType {
+	Income = 'Income',
+	Outgoing = 'Outgoing',
+}
+
 export type Transaction = {
 	id: number;
 	title: string;
-	type: 'income' | 'outgoing';
+	type: TransactionType.Income | TransactionType.Outgoing;
 	amount: number;
 	category: string;
 	createdAt: string;

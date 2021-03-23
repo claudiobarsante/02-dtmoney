@@ -1,6 +1,5 @@
 import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
-
 //images
 import closeImg from '../../assets/close.svg';
 import incomeImg from '../../assets/income.svg';
@@ -8,6 +7,7 @@ import outcomeImg from '../../assets/outcome.svg';
 //Styles
 import { Form, TransactionTypeContainer, TransactionTypeButton } from './styles';
 import { useTransactions } from '../../context/TransactionsContext';
+import { TransactionType } from '../../types/transactions';
 
 interface IProps {
 	isOpen: boolean;
@@ -19,7 +19,9 @@ const NewTransactionModal = ({ isOpen, onRequestClose }: IProps) => {
 
 	const [category, setCategory] = useState('');
 	const [title, setTitle] = useState('');
-	const [type, setType] = useState<'income' | 'outgoing'>('income');
+	const [type, setType] = useState<TransactionType.Income | TransactionType.Outgoing>(
+		TransactionType.Income
+	);
 	const [amount, setAmount] = useState(0);
 
 	async function handleCreateNewTransaction(event: FormEvent) {
@@ -34,7 +36,7 @@ const NewTransactionModal = ({ isOpen, onRequestClose }: IProps) => {
 
 		setCategory('');
 		setTitle('');
-		setType('income');
+		setType(TransactionType.Income);
 		setAmount(0);
 
 		onRequestClose();
@@ -61,9 +63,9 @@ const NewTransactionModal = ({ isOpen, onRequestClose }: IProps) => {
 				<TransactionTypeContainer>
 					<TransactionTypeButton
 						type='button'
-						isActive={type === 'income'}
+						isActive={type === TransactionType.Income}
 						activeColor='green'
-						onClick={() => setType('income')}
+						onClick={() => setType(TransactionType.Income)}
 					>
 						<img src={incomeImg} alt='Income' />
 						<span>Income</span>
@@ -71,8 +73,8 @@ const NewTransactionModal = ({ isOpen, onRequestClose }: IProps) => {
 					<TransactionTypeButton
 						type='button'
 						activeColor='red'
-						isActive={type === 'outgoing'}
-						onClick={() => setType('outgoing')}
+						isActive={type === TransactionType.Outgoing}
+						onClick={() => setType(TransactionType.Outgoing)}
 					>
 						<img src={outcomeImg} alt='Expenses' />
 						<span>Outgoing</span>

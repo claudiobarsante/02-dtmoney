@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createServer, Model } from 'miragejs';
 import App from './App';
+import { TransactionType } from './types/transactions';
 
 createServer({
 	models: {
@@ -15,7 +16,7 @@ createServer({
 					//transactions is the name of the table + 's'
 					id: 1,
 					title: 'Fisrt Teste',
-					type: 'income',
+					type: TransactionType.Income,
 					amount: 123.45,
 					category: 'FreeLance job',
 					createdAt: new Date('2021-02-12 09:00:00'),
@@ -23,7 +24,7 @@ createServer({
 				{
 					id: 2,
 					title: 'Rent',
-					type: 'outgoing',
+					type: TransactionType.Outgoing,
 					amount: 100,
 					category: 'Home expenses',
 					createdAt: new Date('2021-02-14 09:00:00'),
