@@ -26,4 +26,16 @@ export const Container = styled.div`
 			line-height: 3rem;
 		}
 	}
+	.positive {
+		background: var(--green);
+	}
+
+	.negative {
+		background: var(--red);
+	}
+
+	.positive,
+	.negative {
+		color: var(--shape);
+	}
 `;

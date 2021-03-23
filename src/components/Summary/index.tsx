@@ -56,13 +56,12 @@ const Summary = () => {
 					}).format(summary.outgoing)}
 				</strong>
 			</div>
-			<div>
+			<div className={summary.total > 0 ? 'positive' : 'negative'}>
 				<header>
 					<p>Total</p>
 					<img src={total} alt='Total' />
 				</header>
 				<strong>
-					{' '}
 					{new Intl.NumberFormat('en-US', {
 						style: 'currency',
 						currency: 'USD',
